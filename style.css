@@ -492,6 +492,8 @@ h1, h2, h3, h4, h5, h6 {
     flex-direction: column;
     gap: 30px;
     position: relative;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .education-timeline::before {
@@ -506,21 +508,56 @@ h1, h2, h3, h4, h5, h6 {
 
 .education-card {
     display: flex;
-    gap: 25px;
+    gap: 20px;
     background: var(--bg-light);
-    padding: 30px;
+    padding: 0;
     border-radius: var(--border-radius);
     border: 1px solid rgba(59, 130, 246, 0.2);
     position: relative;
     transition: var(--transition);
     box-shadow: var(--shadow-sm);
+    overflow: hidden;
 }
 
 .education-card:hover {
     transform: translateX(10px);
     box-shadow: var(--shadow-lg);
     border-color: var(--primary-color);
-    background: rgba(30, 58, 138, 0.1);
+}
+
+.education-image {
+    width: 200px;
+    height: 100%;
+    min-height: 200px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.education-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.education-card:hover .education-image img {
+    transform: scale(1.1);
+}
+
+.education-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.3) 0%, rgba(37, 99, 235, 0.1) 100%);
+    transition: var(--transition);
+}
+
+.education-card:hover .education-image::after {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.5) 0%, rgba(37, 99, 235, 0.2) 100%);
 }
 
 .education-icon {
@@ -533,7 +570,9 @@ h1, h2, h3, h4, h5, h6 {
     justify-content: center;
     flex-shrink: 0;
     box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
-    position: relative;
+    position: absolute;
+    left: 0;
+    top: 20px;
     z-index: 2;
 }
 
@@ -544,6 +583,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .education-content {
     flex: 1;
+    padding: 25px 30px 25px 80px;
 }
 
 .education-header {
@@ -867,7 +907,7 @@ h1, h2, h3, h4, h5, h6 {
 .contact-card a {
     color: var(--primary-color);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 400;
     transition: var(--transition);
 }
 
@@ -1450,12 +1490,23 @@ h1, h2, h3, h4, h5, h6 {
 
     .education-card {
         flex-direction: column;
+    }
+
+    .education-image {
+        width: 100%;
+        height: 200px;
+    }
+
+    .education-content {
         padding: 20px;
     }
 
     .education-icon {
         width: 50px;
         height: 50px;
+        left: 50%;
+        top: 160px;
+        transform: translateX(-50%);
     }
 
     .education-icon i {
