@@ -463,6 +463,158 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================
+   Education Section
+   ============================================ */
+.education {
+    background: var(--bg-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.education::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.education .container {
+    position: relative;
+    z-index: 1;
+}
+
+.education-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+}
+
+.education-timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 30px;
+    bottom: 30px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--primary-color) 0%, rgba(59, 130, 246, 0.3) 100%);
+}
+
+.education-card {
+    display: flex;
+    gap: 25px;
+    background: var(--bg-light);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    position: relative;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+}
+
+.education-card:hover {
+    transform: translateX(10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+    background: rgba(30, 58, 138, 0.1);
+}
+
+.education-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.4);
+    position: relative;
+    z-index: 2;
+}
+
+.education-icon i {
+    font-size: 1.8rem;
+    color: white;
+}
+
+.education-content {
+    flex: 1;
+}
+
+.education-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.education-content h3 {
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+.education-content h4 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.education-year {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    white-space: nowrap;
+}
+
+.education-content p {
+    color: var(--text-light);
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+.education-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.education-tags span {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--primary-color);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    transition: var(--transition);
+}
+
+.education-tags span:hover {
+    background: rgba(59, 130, 246, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.education-tags i {
+    font-size: 0.9rem;
+}
+
+/* ============================================
    Skills Section
    ============================================ */
 .skills {
@@ -1290,6 +1442,29 @@ h1, h2, h3, h4, h5, h6 {
 
     .contact-form-wrapper {
         padding: 25px;
+    }
+
+    .education-timeline::before {
+        left: 20px;
+    }
+
+    .education-card {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .education-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .education-icon i {
+        font-size: 1.5rem;
+    }
+
+    .education-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
 }
 
