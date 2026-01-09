@@ -735,7 +735,7 @@ h1, h2, h3, h4, h5, h6 {
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 15px;
 }
 
 .form-group {
@@ -779,6 +779,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .form-group textarea {
     resize: vertical;
+    min-height: 80px;
+    max-height: 200px;
 }
 
 /* ============================================
