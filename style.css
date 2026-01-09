@@ -735,7 +735,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -1481,7 +1481,7 @@ h1, h2, h3, h4, h5, h6 {
     }
 
     .projects-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .skills-grid {
@@ -1557,6 +1557,10 @@ h1, h2, h3, h4, h5, h6 {
 
     .about-image .image-wrapper i {
         font-size: 120px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
     }
 
     .back-to-top {
