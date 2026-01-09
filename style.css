@@ -113,12 +113,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .navbar .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 1rem 20px;
+    position: relative;
 }
 
 .nav-brand {
+    position: absolute;
+    left: 20px;
     display: flex;
     align-items: center;
     gap: 10px;
@@ -196,6 +199,8 @@ h1, h2, h3, h4, h5, h6 {
     font-size: 1.5rem;
     cursor: pointer;
     color: var(--secondary-color);
+    position: absolute;
+    right: 20px;
 }
 
 /* Hero Section
@@ -1155,12 +1160,13 @@ h1, h2, h3, h4, h5, h6 {
         left: -100%;
         top: 70px;
         flex-direction: column;
-        background: white;
+        background: rgba(10, 14, 26, 0.98);
         width: 100%;
         text-align: center;
         transition: 0.3s;
         box-shadow: var(--shadow-md);
         padding: 20px 0;
+        border-top: 1px solid rgba(59, 130, 246, 0.2);
     }
 
     .nav-menu.active {
@@ -1169,6 +1175,14 @@ h1, h2, h3, h4, h5, h6 {
 
     .hamburger {
         display: block;
+    }
+
+    .nav-brand {
+        position: static;
+    }
+
+    .navbar .container {
+        justify-content: space-between;
     }
 
     .hero-content {
