@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>log in</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+</head>
+<body>
+<footer>
+        <div class="footer-container">
+          <section class="footer-section-1">
+            <img src="logo.png" alt="CareerCrafter Logo">
+            <p>Our vision is to provide convenience and<br> to help increase your sales business</p>
+            <div class="contact-info">
+              <h3>Contact Us</h3>
+              <p><i class="fa fa-phone"></i><b> +94 11 123 4567</b></p>
+              <p><i class="fa fa-envelope"></i> 
+                <a href="mailto:hello@careercrafter.com">hello@careercrafter.com</a>
+              </p>
+              <div class="social-media">
+                <a href="https://www.facebook.com/CareerCrafter/"><i class="fa fa-facebook-f" style="color:black;width: 35px;"></i></a>
+                <a href="https://www.twitter.com/CareerCrafter/"><i class="fa fa-twitter" style="color:black;"></i></a>
+                <a href="https://www.instagram.com/CareerCrafter/"><i class="fa fa-instagram" style="color:black;"></i></a>
+              </div>
+            </div>
+          </section>
+          <section class="footer-section-2">
+            <div class="footer-links">
+              <h3>Our Pages</h3>
+              <ul>
+                <li><a href="Trainings.html">Trainings</a></li>
+                <li><a href="Jobs.html">Jobs</a></li>
+                <li><a href="Profile.html">Profile</a></li>
+                <li><a href="About Us.html">About Us</a></li>
+              </ul>
+            </div>
+            <div class="footer-links">
+              <h3>Features</h3>
+              <ul>
+                <li><a href="#">Create CV Quickly</a></li>
+                <li><a href="Trainings.html">Training Sessions</a></li>
+                <li><a href="Trainings.html">Online IQ Test</a></li>
+                <li><a href="#">FAQ/Chatbot</a></li>
+              </ul>
+            </div>
+          </section>
+          <section class="footer-section-3">
+            <h3>Write a Comment</h3> 
+            <form action="#" id="comment-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name">
+              </div>
+              <div class="form-group">
+                <label for="comment">Comment and Rating</label>
+                <textarea id="comment" name="comment" placeholder="Write your comment"></textarea>
+                <div class="rating-and-send">
+                  <i class="fa fa-star star-1"></i>
+                  <i class="fa fa-star star-2"></i>
+                  <i class="fa fa-star star-3"></i>
+                  <i class="fa fa-star star-4"></i>
+                  <i class="fa fa-star star-5"></i>
+                  <button type="submit" class="send-button">
+                    <i class="fa fa-paper-plane"></i> </button>
+                </div>
+                <script>
+                    const stars = document.querySelectorAll('.fa-star');
+                  
+                    stars.forEach((star, index) => {
+                      star.addEventListener('mouseover', () => {
+                        highlightStars(index);
+                      });
+                  
+                      star.addEventListener('click', () => {
+                        highlightStars(index);
+                      });
+                    });
+                  
+                    function highlightStars(index) {
+                      stars.forEach((star, i) => {
+                        if (i <= index) {
+                          star.classList.add('active');
+                        } else {
+                          star.classList.remove('active');
+                        }
+                      });
+                    }
+                  </script>
+                  
+              </div>
+            </form>
+          </section>
+        </div>
+        <hr style="border-color: #13213C;
+        box-shadow: 1px 1px #13213C;">
+        <div class="footer-bottom">
+            <p>&copy; 2024 CareerCrafter. All rights reserved.</p>
+            <ul type = none>
+              <li><a class="footer_a" href="https://www.freeprivacypolicy.com/live/44c1a963-7b2d-4486-b56d-184635144c9a">Privacy Policy</a></li>
+              <li><a class="footer_a" href="https://www.freeprivacypolicy.com/live/2a935df5-f30c-4267-acd3-4e2fbbae4516">Terms & Conditions</a></li>
+            </ul>
+          </div>
+      </footer>
+<body>

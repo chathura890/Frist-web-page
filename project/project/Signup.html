@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Career Crafter - Signup</title>
+  <link rel="stylesheet" href="assets/css/login_and_signup.css"> 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+</head>
+<body class="signup_body">
+  <header>
+    <nav>
+    <div class="nav-container">
+      <a class="logo" href="#">
+        <img src="assets/images/logo.png" alt="CareerCrafter logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="home page/index.html">Home</a></li>
+        <li><a href="JobDetails.html">Jobs</a></li>
+        <li><a href="#">Training</a></li>
+        <li><a href="business_profile.html">Profile</a></li>
+        <li><a href="About.html">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <div class="search-bar">
+        <form action="/search" method="post">  
+          <button type="submit">  
+            <i class="fa fa-search" style="color: black;font-weight: 800;"></i>
+          </button>
+          <input type="text" name="query">  
+        </form>
+      </div>
+      <div class="auth-container">
+        <button class="register" onclick="window.location.href='Signup.html'">Register</button>
+        <button class="loginn" onclick="window.location.href='login.html'">Login</button>
+      </div>
+    </div>
+  </nav>
+</header>
+  <main>
+    <section class="signup-form">
+      <div class="form-container">
+        <img src="assets/images/logo.png" alt="Company Logo" class="company-logo">
+        <h2>Register</h2>
+        <form action="#" id="signup-form">
+          <div class="name-fields">
+            <div class="first_one">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="first-name" placeholder="Enter your first name">
+            </div>
+            <div class="second_one">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="last-name" placeholder="Enter your last name">
+            </div>
+          </div>
+          <div class="email-country">
+            <div class="first_one">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="email" placeholder="Enter your email address">
+            </div>
+            <div class="second_one">
+            <label for="country">Country</label>
+            <select name="country" class="country">
+              <option value="">Select Country</option>
+              <option value="US">United States</option>
+              <option value="CA">Canada</option>
+              <option value="AU">Australia</option>
+              </select>
+            </div>
+          </div>
+          <div class="password-fields">
+            <div class="first_one">
+            <label for="password">Password</label>
+            <div class="password-container">
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+                <i class="fas fa-eye" id="toggle-password"></i>
+            </div>
+            </div>
+            <div class="second_one">
+            <label for="confirm-password">Confirm Password</label>
+            <div class="password-container">
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password">
+                <i class="fas fa-eye" id="toggle-confirm-password"></i>
+            </div>
+            </div>
+          </div>
+          <p class="tell_abt_u">Tell us about yourself</p>
+          <textarea name="about-you" id="about-you" placeholder="Tell us about yourself"></textarea>
+          <div class="terms-and-conditions">
+            <input type="checkbox" id="terms" name="terms">
+            <p class="checkbox_p">creating an account, you agree to our terms and conditions</p> 
+          </div>
+          <button type="submit" class="register-btn">Register</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="banner">
+      <p class="banner_p"> <span class="orange-text"> JOIN </span> FOR <br> BETTER <br> EXPERIENCE! </p>
+    </section>
+  </main>
+
+   <!-- Chatbot Icon -->
+	<div class="chatbot-icon" onclick="openChatbot()">
+    <i class="fa fa-comments"></i>
+</div>
+
+<div class="chatbot-modal" id="chatbotModal">
+    <div class="chatbot-header">
+        Hi Wellcome plase tell me your problem
+        <span class="chatbot-close" onclick="closeChatbot()">&times;</span>
+    </div>
+    <div class="chatbot-body">
+        <!-- Chatbot content goes here -->
+        <iframe src="chatbot/chatbot.html" width="100%" height="100%" style="border: none;"></iframe>
+    </div>
+</div>
+
+<script>
+    function openChatbot() {
+        document.getElementById('chatbotModal').style.display = 'block';
+    }
+
+    function closeChatbot() {
+        document.getElementById('chatbotModal').style.display = 'none';
+    }
+</script>
+
+
+
+  <script>
+     // Function to auto-type placeholder text letter by letter
+  function typePlaceholderText(input) {
+    var placeholderText = input.getAttribute('placeholder');
+    var index = 0;
+    var intervalId = setInterval(function() {
+      input.value += placeholderText[index++];
+      if (index === placeholderText.length) {
+        clearInterval(intervalId);
+      }
+    }, 100);
+  }
+
+  // Select all input fields
+  var inputFields = document.querySelectorAll('input[type="text"],textarea');
+
+  // Loop through each input field
+  inputFields.forEach(function(input) {
+    // Call the function to type placeholder text for each input field
+    typePlaceholderText(input);
+
+    // Add event listener for when the input field is clicked
+    input.addEventListener('focus', function() {
+      // Clear the input field if its value is the same as the placeholder text
+      if (input.value === input.getAttribute('placeholder')) {
+        input.value = '';
+      }
+    });
+
+    // Add event listener for when the input field loses focus
+    input.addEventListener('blur', function() {
+      // Set the value back to the placeholder text if the input field is empty
+      if (input.value === '') {
+        typePlaceholderText(input);
+      }
+    });
+  });
+  </script>
+  </body>
+</html>

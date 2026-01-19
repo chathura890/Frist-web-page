@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareerCrafter - Job Details</title>
+  <link rel="stylesheet" href="assets/css/JobDetails.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body>
+  <header>
+    <nav>
+    <div class="nav-container">
+      <a class="logo" href="#">
+        <img src="assets/images/logo.png" alt="CareerCrafter logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="home page/index.html">Home</a></li>
+        <li><a href="JobDetails.html">Jobs</a></li>
+        <li><a href="#">Training</a></li>
+        <li><a href="business_profile.html">Profile</a></li>
+        <li><a href="About.html">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <div class="search-bar">
+        <form action="/search" method="post">  
+          <button type="submit">  
+            <i class="fa fa-search" style="color: black;font-weight: 800;"></i>
+          </button>
+          <input type="text" name="query">  
+        </form>
+      </div>
+      <div class="auth-container">
+        <button class="register" onclick="window.location.href='Signup.html'">Register</button>
+        <button class="loginn" onclick="window.location.href='login.html'">Login</button>
+      </div>
+    </div>
+  </nav>
+  </header>
+    
+
+    <section class="banner">
+      <img src="assets/images/Picture2.png" alt="Banner Image">
+      <div class="banner-content">
+        <h1>DO YOU WANT TO KNOW<br> ABOUT THE JOB DETAILS? </h1>
+        <p>Explore exciting career opportunities on CareerCrafter.</p>
+      </div>
+    </section>
+
+    <div class="main_container">
+      <div class="filters_div">
+    <section class="job_details_1">
+        <aside class="filters">
+          <h2>Filters</h2>
+          <form id="job-filters">
+  
+            <div class="filter-group">
+              <h3>Location</h3>
+              <div class="location-filters">
+                <input type="radio" name="location" id="location-near-me" value="near_me">
+                <label for="location-near-me">Near Me</label><br>
+                <input type="radio" name="location" id="location-remote" value="remote">
+                <label for="location-remote">Remote Job</label><br>
+                <input type="radio" name="location" id="location-exact" value="exact">
+                <label for="location-exact">Exact Location</label><br>
+                <input type="radio" name="location" id="location-within-15km" value="within_15km">
+                <label for="location-within-15km">Within 15KM</label>
+              </div>
+            </div>
+  
+            <div class="filter-group">
+              <h3>Salary</h3>
+              <select name="salary-type" id="salary-type">
+                <option value="">Select Type</option>
+                <option value="hourly">Hourly</option>
+                <option value="monthly">Monthly</option>
+                <option value="yearly">Yearly</option>
+              </select>
+              <div class="salary-filters">
+                <input type="radio" name="salary-range" id="salary-any" value="any">
+                <label for="salary-any">Any</label><br>
+                <input type="radio" name="salary-range" id="salary-below-50k" value="below_50k">
+                <label for="salary-below-50k">Below $50,000</label><br>
+                <input type="radio" name="salary-range" id="salary-50k-100k" value="50k_100k">
+                <label for="salary-50k-100k">$50,000 - $100,000</label><br>
+                <input type="radio" name="salary-range" id="salary-100k-150k" value="100k_150k">
+                <label for="salary-100k-150k">$100,000 - $150,000</label><br>
+                <input type="radio" name="salary-range" id="salary-above-150k" value="above_150k">
+                <label for="salary-above-150k">Above $150,000</label>
+              </div>
+            </div>
+  
+            <div class="filter-group">
+                <h3>Date of Posting</h3>
+                <div class="date-filters">
+                  <input type="radio" name="date-posted" id="date-all-time" value="all_time" checked>
+                  <label for="date-all-time">All Time</label><br>
+                  <input type="radio" name="date-posted" id="date-last-24h" value="last_24h">
+                  <label for="date-last-24h">Last 24 Hours</label><br>
+                  <input type="radio" name="date-posted" id="date-last-3d" value="last_3d">
+                  <label for="date-last-3d">Last 3 Days</label><br>
+                  <input type="radio" name="date-posted" id="date-last-7d" value="last_7d">
+                  <label for="date-last-7d">Last 7 Days</label><br>
+                </div>
+              </div>
+
+                <div class="filter-group">
+                    <h3>Work Experience</h3>
+                    <div class="experience-filters">
+                      <input type="radio" name="work-experience" id="experience-any" value="any" checked>
+                      <label for="experience-any">Any</label><br>
+                      <input type="radio" name="work-experience" id="experience-0-1y" value="0_1y">
+                      <label for="experience-0-1y">0 - 1 year</label><br>
+                      <input type="radio" name="work-experience" id="experience-1-3y" value="1_3y">
+                      <label for="experience-1-3y">1 - 3 years</label><br>
+                      <input type="radio" name="work-experience" id="experience-3+" value="3+">
+                      <label for="experience-3+">3+ years</label>
+                    </div>
+                  </div>
+        
+                  <div class="filter-group">
+                    <h3>Employment Type</h3>
+                    <div class="employment-filters">
+                      <input type="checkbox" name="employment-type[]" id="employment-full-time" value="full_time">
+                      <label for="employment-full-time">Full Time</label><br>
+                      <input type="checkbox" name="employment-type[]" id="employment-part-time" value="part_time">
+                      <label for="employment-part-time">Part Time</label><br>
+                      <input type="checkbox" name="employment-type[]" id="employment-internship" value="internship">
+                      <label for="employment-internship">Internship</label><br>
+                      <input type="checkbox" name="employment-type[]" id="employment-temporary" value="temporary">
+                      <label for="employment-temporary">Temporary</label>
+                    </div>
+                  </div>
+                  <button type="submit">Filter Jobs</button>
+            </form>
+        </aside>
+    </section>
+    </div>
+
+    <div class="job-listings">
+    <section class="job-details">
+          <div class="job-info">
+            <img class="company-logo" src="assets/images/Vacancy.png" alt="Company Logo">
+            <h1 class="company-name">Acme Corporation</h1>
+            <h2 class="job-title">Software Engineer <span class="new-post">New Post!</span></h2>
+            <p class="job-details">
+              <span class="location"><i class="fas fa-map-marker-alt"></i> San Francisco, CA</span>
+              <span class="type"><i class="fas fa-briefcase"></i> Full Time</span>
+              <span class="salary"><i class="fas fa-dollar-sign"></i> Competitive</span>
+              <span class="posted-on"><i class="fas fa-calendar-alt"></i> Posted Today</span>
+            </p>
+           
+            <img class="job-image"  src="assets/images/Vacancy.png" alt="Job Vacancy Image">
+            <div class="buttons">
+              <button class="contact-us">Contact Us</button>
+              <button class="apply-now">Apply Now</button>
+            </div>
+          </div>
+      </section>
+    </div>
+    <div class="job_alerts_div">
+      <aside class="job-alerts">
+        <div class="alert-group">
+        <h3>Email me for jobs</h3>
+          <p>Sign up to receive job alerts by email.</p>
+          <form id="email-signup">
+            <input type="email" name="email" placeholder="Enter your email address">
+            <button type="submit">Subscribe</button>
+          </form>
+          <h3>Get notified faster</h3>
+          <p>Upload your resume for faster job matching.</p>
+          <button class="upload-resume">Upload Resume</button>
+        </div>
+      </aside>
+    </section>
+    </div>
+</div>
+ <!-- Chatbot Icon -->
+ <div class="chatbot-icon" onclick="openChatbot()">
+  <i class="fa fa-comments"></i>
+</div>
+
+<div class="chatbot-modal" id="chatbotModal">
+  <div class="chatbot-header">
+      Hi Wellcome plase tell me your problem
+      <span class="chatbot-close" onclick="closeChatbot()">&times;</span>
+  </div>
+  <div class="chatbot-body">
+      <!-- Chatbot content goes here -->
+      <iframe src="chatbot/chatbot.html" width="100%" height="100%" style="border: none;"></iframe>
+  </div>
+</div>
+
+<script>
+  function openChatbot() {
+      document.getElementById('chatbotModal').style.display = 'block';
+  }
+
+  function closeChatbot() {
+      document.getElementById('chatbotModal').style.display = 'none';
+  }
+</script>
+
+
+<footer>
+  <div class="footer-container">
+    <section class="footer-section-1">
+      <img src="assets/images/logo.png" alt="CareerCrafter Logo">
+      <p>Our vision is to provide convenience and<br> to help increase your sales business</p>
+      <div class="contact-info">
+        <h3>Contact Us</h3>
+        <p><i class="fa fa-phone"></i><b> +94 11 123 4567</b></p>
+        <p><i class="fa fa-envelope"></i>
+          <a href="mailto:hello@careercrafter.com">hello@careercrafter.com</a>
+        </p>
+        <div class="social-media">
+          <a href="https://www.facebook.com/CareerCrafter/"><i class="fa fa-facebook-f"
+              style="color:black;width: 35px;"></i></a>
+          <a href="https://www.twitter.com/CareerCrafter/"><i class="fa fa-twitter" style="color:black;"></i></a>
+          <a href="https://www.instagram.com/CareerCrafter/"><i class="fa fa-instagram" style="color:black;"></i></a>
+        </div>
+      </div>
+    </section>
+    <section class="footer-section-2">
+      <div class="footer-links">
+        <h3>Our Pages</h3>
+        <ul>
+          <li><a href="Trainings.html">Trainings</a></li>
+          <li><a href="Jobs.html">Jobs</a></li>
+          <li><a href="Profile.html">Profile</a></li>
+          <li><a href="About Us.html">About Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h3>Features</h3>
+        <ul>
+          <li><a href="#">Create CV Quickly</a></li>
+          <li><a href="Trainings.html">Training Sessions</a></li>
+          <li><a href="Trainings.html">Online IQ Test</a></li>
+          <li><a href="#">FAQ/Chatbot</a></li>
+        </ul>
+      </div>
+    </section>
+    <section class="footer-section-3">
+      <h3>Write a Comment</h3>
+      <form action="#" id="comment-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+          <label for="comment">Comment and Rating</label>
+          <textarea id="comment" name="comment" placeholder="Write your comment"></textarea>
+          <div class="rating-and-send">
+            <i class="fa fa-star star-1"></i>
+            <i class="fa fa-star star-2"></i>
+            <i class="fa fa-star star-3"></i>
+            <i class="fa fa-star star-4"></i>
+            <i class="fa fa-star star-5"></i>
+            <button type="submit" class="send-button">
+              <i class="fa fa-paper-plane"></i> </button>
+          </div>
+          <script>
+            const stars = document.querySelectorAll('.fa-star');
+
+            stars.forEach((star, index) => {
+              star.addEventListener('mouseover', () => {
+                highlightStars(index);
+              });
+
+              star.addEventListener('click', () => {
+                highlightStars(index);
+              });
+            });
+
+            function highlightStars(index) {
+              stars.forEach((star, i) => {
+                if (i <= index) {
+                  star.classList.add('active');
+                } else {
+                  star.classList.remove('active');
+                }
+              });
+            }
+          </script>
+
+        </div>
+      </form>
+    </section>
+  </div>
+  <hr style="border-color: #13213C;
+  box-shadow: 1px 1px #13213C;">
+  <div class="footer-bottom">
+    <p>&copy; 2024 CareerCrafter. All rights reserved.</p>
+    <ul type=none>
+      <li><a class="footer_a"
+          href="https://www.freeprivacypolicy.com/live/44c1a963-7b2d-4486-b56d-184635144c9a">Privacy Policy</a></li>
+      <li><a class="footer_a" href="https://www.freeprivacypolicy.com/live/2a935df5-f30c-4267-acd3-4e2fbbae4516">Terms
+          & Conditions</a></li>
+    </ul>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- css bootstrap v5 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="assets/css/Student_profile_style.css" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <title>My Profile</title>
+
+    <!-- js bootstrap v5 -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <script src="profile.js"></script>
+
+    <!---------nav bar--------->
+    <header>
+      <nav>
+        <div class="nav-container">
+          <a class="logo" href="#">
+            <img src="assets/images/logo.png" alt="CareerCrafter logo" />
+          </a>
+          <ul class="nav-links">
+            <li><a href="home page/index.html">Home</a></li>
+            <li><a href="JobDetails.html">Jobs</a></li>
+            <li><a href="#">Training</a></li>
+            <li><a href="business_profile.html">Profile</a></li>
+            <li><a href="About.html">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+          <div class="search-bar">
+            <form action="/search" method="post">
+              <button type="submit">
+                <i
+                  class="fa fa-search"
+                  style="color: black; font-weight: 800"
+                ></i>
+              </button>
+              <input type="text" name="query" />
+            </form>
+          </div>
+          <div class="auth-container">
+            <button class="register" onclick="window.location.href='Signup.html'">Register</button>
+            <button class="loginn" onclick="window.location.href='login.html'">Login</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- <div class="container">
+      <div class="cover-img-div">
+        <img
+          id="cover-img"
+          src="C:\Users\Vihanga Vimukthi\OneDrive\Documents\Desktop\group project docs\student profile page\codes\HTML\coverphoto.jpg"
+          alt="Cover Photo"
+        />
+
+        <div class="profile-image-add-div">
+          <div class="profile-img-change-div pl-2">
+            <div class="profile-change" id="profile-photo-upload">
+              <i class="fa-regular fa-image"></i>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="text-center">
+            <div class="mt-5">
+              <input
+                type="checkbox"
+                id="checkbox1"
+                style="display: inline-block"
+              />
+              <label for="checkbox1">Student</label>
+
+              <input
+                type="checkbox"
+                id="checkbox2"
+                style="display: inline-block"
+              />
+              <label for="checkbox2">Business</label>
+            </div>
+            <button class="btn btn-success">Edit</button>
+          </div>
+          <button class="btn btn-warning">Edit</button>
+
+          <div class="text-right">
+            <button class="btn btn-primary">Edit</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="container">
+      <div class="cover-img-div">
+        <img
+          id="cover-img"
+          src="assets/images/coverphoto.jpg"
+          alt="Cover Photo"
+        />
+
+        <div class="profile-image-add-div">
+          <div class="profile-img-change-div pl-2">
+            <div class="profile-change" id="profile-photo-upload">
+              <i class="fa-regular fa-image"></i>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="text-center">
+            <div class="options">
+              <input type="radio" id="student" name="category" value="student" checked>
+              <label for="student">Student</label>
+              <input type="radio" id="business" name="category" value="business" >
+              <label for="business">Business</label>
+            </div>
+          </div>
+          <script>
+            document.querySelectorAll('input[name="category"]').forEach((elem) => {
+                elem.addEventListener("change", function(event) {
+                    var value = event.target.value;
+                    if (value === "student") {
+                        window.location.href = "http://example.com/student"; // Replace with actual URL
+                    } else if (value === "business") {
+                        window.location.href = "business_profile.html"; // Replace with actual URL
+                    }
+                });
+            });
+        </script>
+        </div>
+      </div>
+
+      <!-----------left side grid------------------------>
+      <div class="full-grid">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="row">
+              <div class="bio">
+                <h2 class="bio-title" id="bio-title">Edit Bio</h2>
+                <textarea
+                  id="bio-text"
+                  class="bio-text"
+                  placeholder="Write your bio here..."
+                ></textarea>
+                <button id="bio-Edit-btn" class="btn btn-primary">Save</button>
+              </div>
+            </div>
+            <!-----------end of row------------------------>
+            <div class="profilo-div">
+              <h2 class="Portfolio-title mt-5">Portfolio</h2>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="photo-upload" id="photo-upload-1">
+                    <i class="fa-regular fa-image"></i>
+                  </div>
+                  <div class="photo-upload" id="photo-upload-2">
+                    <i class="fa-regular fa-image"></i>
+                  </div>
+                  <div class="photo-upload" id="photo-upload-3">
+                    <i class="fa-regular fa-image"></i>
+                  </div>
+                  <div class="photo-upload" id="photo-upload-4">
+                    <i class="fa-regular fa-image"></i>
+                  </div>
+                  <i class="fas fa-cloud-arrow-up fa-3x"></i>
+                </div>
+                <div class="col-md-6">
+                  <div class="photo-upload" id="photo-upload-5">
+                    <i class="fa-regular fa-image"></i>
+                  </div>
+                  <div class="photo-upload" id="photo-upload-6">
+                    <i class="fa-regular fa-image"></i>
+                  </div>
+                  <div class="photo-upload" id="photo-upload-7">
+                    <i class="fa-regular fa-image"></i>
+                  </div>
+                  <div class="photo-upload" id="photo-upload-8">
+                    <i class="fa-regular fa-image"></i>
+                  </div>
+                  <button id="portfolio-Edit-btn" class="btn btn-primary">
+                    Save
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-----------end of profilo-div------------------------>
+            <!----------Contact Details----------------->
+            <div class="Contact-Details">
+              <h2 class="contact-info mt-5">Contact Details</h2>
+              <div class="row">
+                <!-- telephone div -->
+                <div class="tele-div mt-3">
+                  <label for="telephone">Telephone</label>
+                  <input
+                    type="text"
+                    id="telephone-no"
+                    class="telephone-input personal-info-input"
+                    placeholder=""
+                  />
+                </div>
+                <!-- End of telephone div -->
+              </div>
+              <div class="row">
+                <!-- mobile div -->
+                <div class="mobile-div mt-3">
+                  <label for="mobile">Mobile</label>
+                  <input
+                    type="text"
+                    id="mobile-no"
+                    class="mobile-input personal-info-input"
+                    placeholder=""
+                  />
+                </div>
+                <!-- End of mobile div -->
+              </div>
+              <div class="row">
+                <!-- email div -->
+                <div class="email-div mt-3">
+                  <label for="email">E-mail</label>
+                  <input
+                    type="text"
+                    id="email-address"
+                    class="email-input personal-info-input"
+                    placeholder=""
+                  />
+                </div>
+                <!-- End of email div -->
+              </div>
+              <div class="row">
+                <!-- website address div -->
+                <div class="website-div mt-3">
+                  <label for="website">Website</label>
+                  <input
+                    type="text"
+                    id="website-adddress"
+                    class="website-input personal-info-input"
+                    placeholder=""
+                  />
+                </div>
+                <!-- End of website address div -->
+              </div>
+              <div class="row">
+                <!-- social media link div -->
+                <div class="social-media-div mt-3">
+                  <label for="social-media">Social Media</label><br />
+                  <input
+                    type="text"
+                    id="socialmedia-no"
+                    class="socialmedia-input personal-info-input"
+                    placeholder=""
+                  />
+                </div>
+                <!-- End of social media link div -->
+                <button id="contact-Edit-btn" class="btn btn-primary">
+                  +ADD
+                </button>
+                <button id="contact-save-btn" class="btn btn-primary">
+                  Save
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-----------end of col-md-4 grid------------------------>
+
+          <!-----------------------right side grid------------------------------------------------>
+
+          <div class="col-md-8" style="margin-top: 79px;">
+            <!-- Personal Information section -->
+            <div class="right-div1">
+              <div class="Personal-Information">
+                <h2>Personal Information</h2>
+              </div>
+              <!-- End of Personal Information section -->
+
+              <!-- Row for personal information -->
+              <div class="row">
+                <div class="col-md-6">
+                  <!-- First Name input -->
+                  <div class="first-name mt-5">
+                    <label for="first-name">First Name</label>
+                    <input
+                      type="text"
+                      id="first-name"
+                      class="first-name-input personal-info-input"
+                      placeholder=""
+                    />
+                  </div>
+                  <!-- End of First Name input -->
+                </div>
+                <!-- End of 1st grid -->
+
+                <div class="col-md-6">
+                  <!-- Last Name input -->
+                  <div class="last-name-div mt-5">
+                    <label for="last-name">Last Name</label>
+                    <input
+                      type="text"
+                      id="last-name"
+                      class="last-name-input personal-info-input"
+                      placeholder=""
+                    />
+                  </div>
+                  <!-- End of Last Name input -->
+                </div>
+                <!-- End of 2nd grid -->
+              </div>
+              <!-- End of row for personal information -->
+
+              <!-- Address and Zip Code section -->
+              <div class="row">
+                <div class="col-md-12">
+                  <!-- Address input -->
+                  <div class="address-div mt-3">
+                    <label for="address">Address</label>
+                    <input
+                      type="text"
+                      id="address"
+                      class="address-input personal-info-input"
+                      placeholder=""
+                    />
+                  </div>
+                  <!-- End of Address input -->
+                </div>
+                <!-- End of Address grid -->
+              </div>
+
+              <div class="row">
+                <div class="col-md-8">
+                  <!-- Address input (continued) -->
+                  <div class="address-div mt-3">
+                    <label for="address"></label>
+                    <input
+                      type="text"
+                      id="address-2"
+                      class="address-input personal-info-input"
+                      placeholder=""
+                    />
+                  </div>
+                  <!-- End of Address (continued) -->
+                </div>
+                <!-- End of col-md-12 for Address (continued) -->
+
+                <div class="col-md-4">
+                  <!-- Zip Code input -->
+                  <div class="zip-code-div mt-3">
+                    <label for="zipcode">Zip Code</label>
+                    <input
+                      type="text"
+                      id="zip-code"
+                      class="zip-code-input personal-info-input"
+                      placeholder=""
+                    />
+                  </div>
+                  <!-- End of Zip Code input -->
+                </div>
+                <!-- End of Zip Code grid -->
+              </div>
+              <!-- End of nested row for Address and Zip Code -->
+
+              <!-- Birthday section -->
+              <div class="row">
+                <div class="col-md-4">
+                  <!-- Birthday input -->
+
+                  <div class="bday-div mt-3">
+                    <label for="birthday">Birthday </label>
+                    <div class="input-group mt-3">
+                      <input
+                        type="text"
+                        id="birthday"
+                        class="birthday-input form-control"
+                        placeholder="DD/MM/YYYY"
+                      />
+                      <i class="fa-solid fa-calendar-check fa-2x"></i>
+                      <!-- End of input-group -->
+                    </div>
+                  </div>
+                </div>
+                <!-- End of col-md-4 for Birthday input -->
+
+                <div class="col-md-8">
+                  <div class="col-md-4 text-right">
+                    <!-- Save button -->
+                    <button id="date-save-btn" class="btn btn-primary">
+                      Save
+                    </button>
+                  </div>
+                  <!-- End of col-md-4 for Save button -->
+                </div>
+                <!-- End of col-md-8 for Birthday section -->
+              </div>
+              <!-- End of Birthday section -->
+            </div>
+            <!-- End of right-div1 -->
+
+            <!-- Education section -->
+            <div class="right-div2 mt-5">
+              <div class="row">
+                <div class="col-md-12">
+                  <h2>Education</h2>
+                  <!-- school input -->
+                  <div class="school mt-3">
+                    <label for="school">School/University</label>
+                    <input
+                      type="text"
+                      id="school"
+                      class="school-input personal-info-input"
+                      placeholder=""
+                    />
+                  </div>
+                  <!-- End of school input -->
+                </div>
+                <!-- End of col-md-12 grid -->
+              </div>
+              <!-- End of row -->
+
+              <div class="row">
+                <div class="col-md-12">
+                  <!-- degree input -->
+                  <div class="degree mt-3">
+                    <label for="degree">Degree/Diploma/Course</label>
+                    <input
+                      type="text"
+                      id="degree"
+                      class="degree-input personal-info-input"
+                      placeholder=""
+                    />
+                  </div>
+                  <!-- End of degree input -->
+                </div>
+                <!-- End of degree grid -->
+              </div>
+              <!-- End of row -->
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="st-group mt-3">
+                    <label for="first-day">Start Date</label>
+                    <input
+                      type="text"
+                      id="firstday"
+                      class="satrtday-input form-control"
+                      placeholder="DD/MM/YYYY"
+                    />
+                  </div>
+                  <!-- End of st-group -->
+                </div>
+                <!--end of the coi-md-6 -->
+
+                <div class="col-md-6">
+                  <div class="fnl-group mt-3">
+                    <label for="final-day">End Date</label>
+                    <input
+                      type="text"
+                      id="finalday"
+                      class="finalday-input form-control"
+                      placeholder="DD/MM/YYYY"
+                    />
+                  </div>
+                  <!-- End of fnl-group -->
+                </div>
+                <!-- End of coi-md-6 -->
+              </div>
+              <!-- End of row -->
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="about-div mt-3">
+                    <label for="about-title">About(optional)</label>
+                    <textarea
+                      id="about-text"
+                      class="about-text"
+                      placeholder=""
+                    ></textarea>
+                    <div class="row">
+                      <button id="about-Edit-btn" class="btn btn-primary">
+                        Save
+                      </button>
+                      <button id="edu-add-btn" class="btn btn-primary">
+                        +ADD
+                      </button>
+                    </div>
+                  </div>
+                  <!-- End of about-div -->
+                </div>
+                <!-- End of col-md-12 -->
+              </div>
+              <!-- End of row -->
+            </div>
+            <!-- End of Education section -->
+
+            <!-- Experience section -->
+            <div class="right-div3">
+              <div class="row">
+                <div class="col-md-12">
+                  <h2 class="experience mt-5">Experience</h2>
+                  <!-- Experience input -->
+                  <div class="company mt-3">
+                    <label for="company">Company/Organization</label>
+                    <input
+                      type="text"
+                      id="company"
+                      class="company-input personal-info-input"
+                      placeholder=""
+                    />
+                  </div>
+                  <!-- End of Experience input -->
+                </div>
+                <!-- End of col-md-12 -->
+              </div>
+              <!-- End of row -->
+
+              <div class="row">
+                <div class="col-md-12">
+                  <!-- position input -->
+                  <div class="position mt-3">
+                    <label for="position">Position/Achievement</label>
+                    <input
+                      type="text"
+                      id="position"
+                      class="position-input personal-info-input"
+                      placeholder=""
+                    />
+                  </div>
+                  <!-- End of position input -->
+                </div>
+                <!-- End of position grid -->
+              </div>
+              <!-- End of row -->
+
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="st-group mt-3">
+                    <label for="start-day">Start Date</label>
+                    <div class="row">
+                    <input
+                      type="text"
+                      id="startday"
+                      class="satrtday-input form-control"
+                      placeholder="DD/MM/YYYY"
+                    />
+                    
+                  </div>
+                  </div>
+                  <!-- End of st-group -->
+                </div>
+                <!-- End of 1st grid -->
+
+                <div class="col-md-6">
+                  <div class="fnl-group mt-3">
+                    <label for="final-day">End Date</label>
+                    <input
+                      type="text"
+                      id="finalday"
+                      class="finalday-input form-control"
+                      placeholder="DD/MM/YYYY"
+                    />
+                    
+                  </div>
+                  <!-- End of fnl-group -->
+                
+                </div>
+                <!-- End of 1st grid -->
+              
+              </div>
+              <!-- End of row -->
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="about-div mt-3">
+                    <label for="about-title">About(optional)</label>
+                    <textarea
+                      id="about-text"
+                      class="about-text"
+                      placeholder=""
+                    ></textarea>                   
+                    <div class="row">
+                    <button id="about-save-btn" class="btn btn-primary">
+                      Save
+                    </button>
+                    <button id="about-edit-btn" class="btn btn-primary">
+                      +ADD
+                    </button>
+                  </div>
+                  </div>
+                  <!-- End of about-div -->
+                </div>
+                <!-- End of col-md-12 -->
+              </div>
+              <!-- End of row -->
+            </div>
+            <!-- End of experience div -->
+
+            <!-- Certificates section -->
+            <div class="right-div4">
+              <div class="row">
+                <div class="col-md-12">
+                  <h2 class="certificate mt-5">Certificates</h2>
+                  <!-- certificate input -->
+                  <div class="certificate">
+                    <label for="certificate">Certificate Name</label>
+                    <input
+                      type="text"
+                      id="certificate"
+                      class="certificate-input personal-info-input"
+                      placeholder=""
+                    />
+                  </div>
+                  <!-- End of certificate input -->
+                </div>
+                <!-- End of col-md-12 -->
+              </div>
+              <!-- End of row -->
+
+              <div class="row">
+                <div class="col-md-12">
+                  <!-- organization input -->
+                  <div class="organization mt-3">
+                    <label for="organization">Organization</label>
+                    <input
+                      type="text"
+                      id="organization"
+                      class="organization-input personal-info-input"
+                      placeholder=""
+                    />
+                  </div>
+                  <!-- End of organization input -->
+                </div>
+                <!-- End of col-md-12  -->
+              </div>
+              <!-- End of row -->
+
+              <div class="row">
+                <div class="col-md-8">
+                  <!-- link input -->
+                  <div class="link-div mt-3">
+                    <label for="link1">Link</label>
+                    <input
+                      type="text"
+                      id="link1"
+                      class="link-input personal-info-input"
+                      placeholder=""
+                    />
+                  </div>
+                  <!-- End of link input -->
+                </div>
+                <!-- End of col-md-8 -->
+
+                <div class="col-md-4">
+                  <div class="recieved-group mt-3">
+                    <label for="recieved-day">Recieved Date</label>
+                    <input
+                      type="text"
+                      id="recievedday"
+                      class="recievedday-input form-control"
+                      placeholder="DD/MM/YYYY"
+                    />
+                  </div>
+                  <!-- End of recieved-group -->
+                </div>
+                <!-- End of col-md-4 -->
+              </div>
+              <!-- End of row -->
+
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="about-div mt-3">
+                    <label for="about-title">About(optional)</label>
+                    <textarea
+                      id="about-text"
+                      class="about-text"
+                      placeholder=""
+                    ></textarea>
+                    <div class="row">
+                    <button id="about-save-btn" class="btn btn-primary">
+                      Save
+                    </button>
+                    <button id="about-edit-btn" class="btn btn-primary">
+                     +ADD
+                    </button>
+                  </div>
+                  </div>
+                  <!-- about-div -->
+                </div>
+                <!-- End of row -->
+              </div>
+              <!-- End of row -->
+            </div>
+            <!-- End of certification -->
+
+            <!-- Skill section -->
+            <div class="right-div5 mt-5">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="skill mt-3">
+                  <h2>Skills</h2>
+                  <!-- skill input -->
+                  <div class="skill-text">
+                    <label for="skill">Skill</label>
+                    <input
+                      type="text"
+                      id="skill"
+                      class="skill-input personal-info-input"
+                      placeholder=""
+                    />
+                    <div class="progress mt-4" style="height: 30px;">
+                      <div class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <input type="range" id="progress-slider" min="0" max="100" value="75">
+                  </div>
+                  <!-- End of skill input -->
+                  <div class="row">
+                  <button id="skill-save-btn" class="btn btn-primary">
+                    Save
+                  </button>
+                  <button id="skill-edit-btn" class="btn btn-primary">
+                    +ADD
+                  </button>
+                </div>
+              </div>
+                </div>
+                <!-- End of col-md-12 -->
+              </div>
+              <!-- End of row -->
+            </div>
+            <!-- End of right-div5 -->
+
+            <!-- Language section -->
+            <div class="right-div6 mt-5">
+              <div class="row">
+                <div class="col-md-6">
+                  <h2>Languages</h2>
+                  <!-- language input -->
+                  <div class="language-text">
+                    <label for="language">Language</label>
+                    <input
+                      type="text"
+                      id="language"
+                      class="language-input personal-info-input"
+                      placeholder=""
+                    />
+                </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="progress" style="height: 30px;">
+                    <div id="progress-bar" class="progress-bar w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                </div>
+                <input type="range" id="progress-slider" min="0" max="100" value="75">
+                  </div>
+                </div>
+              
+              
+                  <!-- End of language input -->
+                  <div class="row">
+                    <button id="language-add-btn" class="btn btn-primary">
+                      +ADD
+                    </button>
+                    <button id="language-save-btn" class="btn btn-primary">
+                      Save
+                    </button>
+                  </div>
+                
+                <!-- End of language grid -->
+              </div>
+              <!-- End of row -->
+            </div>
+            <!-- End of right-div6 -->
+          </div>
+          <!-- End of main grid col-md-8 -->
+        </div>
+        <!-----------end of main row------------------------>
+      </div>
+      <!-----------end of full grid------------------------>
+    </div>
+    <!-----------end of container------------------------>
+     <!-- Chatbot Icon -->
+	<div class="chatbot-icon" onclick="openChatbot()">
+    <i class="fa fa-comments"></i>
+</div>
+
+<div class="chatbot-modal" id="chatbotModal">
+    <div class="chatbot-header">
+        Hi Wellcome plase tell me your problem
+        <span class="chatbot-close" onclick="closeChatbot()">&times;</span>
+    </div>
+    <div class="chatbot-body">
+        <!-- Chatbot content goes here -->
+        <iframe src="chatbot/chatbot.html" width="100%" height="100%" style="border: none;"></iframe>
+    </div>
+</div>
+
+<script>
+    function openChatbot() {
+        document.getElementById('chatbotModal').style.display = 'block';
+    }
+
+    function closeChatbot() {
+        document.getElementById('chatbotModal').style.display = 'none';
+    }
+</script>
+
+
+
+    <!------------------footer-------------------------->
+    <footer>
+      <div class="footer-container">
+        <section class="footer-section-1">
+          <img src="assets/images/logo.png" alt="CareerCrafter Logo">
+          <p>Our vision is to provide convenience and<br> to help increase your sales business</p>
+          <div class="contact-info">
+            <h3>Contact Us</h3>
+            <p><i class="fa fa-phone"></i><b> +94 11 123 4567</b></p>
+            <p><i class="fa fa-envelope"></i>
+              <a href="mailto:hello@careercrafter.com">hello@careercrafter.com</a>
+            </p>
+            <div class="social-media">
+              <a href="https://www.facebook.com/CareerCrafter/"><i class="fa fa-facebook-f"
+                  style="color:black;width: 35px;"></i></a>
+              <a href="https://www.twitter.com/CareerCrafter/"><i class="fa fa-twitter" style="color:black;"></i></a>
+              <a href="https://www.instagram.com/CareerCrafter/"><i class="fa fa-instagram" style="color:black;"></i></a>
+            </div>
+          </div>
+        </section>
+        <section class="footer-section-2">
+          <div class="footer-links">
+            <h3>Our Pages</h3>
+            <ul>
+              <li><a href="Trainings.html">Trainings</a></li>
+              <li><a href="Jobs.html">Jobs</a></li>
+              <li><a href="Profile.html">Profile</a></li>
+              <li><a href="About Us.html">About Us</a></li>
+            </ul>
+          </div>
+          <div class="footer-links">
+            <h3>Features</h3>
+            <ul>
+              <li><a href="#">Create CV Quickly</a></li>
+              <li><a href="Trainings.html">Training Sessions</a></li>
+              <li><a href="Trainings.html">Online IQ Test</a></li>
+              <li><a href="#">FAQ/Chatbot</a></li>
+            </ul>
+          </div>
+        </section>
+        <section class="footer-section-3">
+          <h3>Write a Comment</h3>
+          <form action="#" id="comment-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+              <label for="comment">Comment and Rating</label>
+              <textarea id="comment" name="comment" placeholder="Write your comment"></textarea>
+              <div class="rating-and-send">
+                <i class="fa fa-star star-1"></i>
+                <i class="fa fa-star star-2"></i>
+                <i class="fa fa-star star-3"></i>
+                <i class="fa fa-star star-4"></i>
+                <i class="fa fa-star star-5"></i>
+                <button type="submit" class="send-button">
+                  <i class="fa fa-paper-plane"></i> </button>
+              </div>
+              <script>
+                const stars = document.querySelectorAll('.fa-star');
+    
+                stars.forEach((star, index) => {
+                  star.addEventListener('mouseover', () => {
+                    highlightStars(index);
+                  });
+    
+                  star.addEventListener('click', () => {
+                    highlightStars(index);
+                  });
+                });
+    
+                function highlightStars(index) {
+                  stars.forEach((star, i) => {
+                    if (i <= index) {
+                      star.classList.add('active');
+                    } else {
+                      star.classList.remove('active');
+                    }
+                  });
+                }
+              </script>
+    
+            </div>
+          </form>
+        </section>
+      </div>
+      <hr style="border-color: #13213C;
+      box-shadow: 1px 1px #13213C;">
+      <div class="footer-bottom">
+        <p>&copy; 2024 CareerCrafter. All rights reserved.</p>
+        <ul type=none>
+          <li><a class="footer_a"
+              href="https://www.freeprivacypolicy.com/live/44c1a963-7b2d-4486-b56d-184635144c9a">Privacy Policy</a></li>
+          <li><a class="footer_a" href="https://www.freeprivacypolicy.com/live/2a935df5-f30c-4267-acd3-4e2fbbae4516">Terms
+              & Conditions</a></li>
+        </ul>
+      </div>
+    </footer>
+ 
+
+
+  </body>
+</html>

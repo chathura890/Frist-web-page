@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>log in</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
+    <link rel="stylesheet" href="assets/css/Business_Profile_Styles.css">
+</head>
+<body>
+   <header>
+    <nav>
+    <div class="nav-container">
+      <a class="logo" href="#">
+        <img src="assets/images/logo.png" alt="CareerCrafter logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="home page/index.html">Home</a></li>
+        <li><a href="JobDetails.html">Jobs</a></li>
+        <li><a href="#">Training</a></li>
+        <li><a href="business_profile.html">Profile</a></li>
+        <li><a href="About.html">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <div class="search-bar">
+        <form action="/search" method="post">  
+          <button type="submit">  
+            <i class="fa fa-search" style="color: black;font-weight: 800;"></i>
+          </button>
+          <input type="text" name="query">  
+        </form>
+      </div>
+      <div class="auth-container">
+        <button class="register" onclick="window.location.href='Signup.html'">Register</button>
+        <button class="loginn" onclick="window.location.href='login.html'">Login</button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+   
+      
+        <!-- Main Photo -->
+       <div class="image-container">
+      <!-- Main Photo -->
+      <img src="assets/images/123.jpg" alt="Main Photo" class="main-photo">
+	  
+      <!-- Profile Photo -->
+	   <form id="upload-form" action="assets/images/upload.jpg" method="post" enctype="multipart/form-data">
+     <label for="profile-image">
+        <img id="profile-img" src="assets/images/profile.jpg" alt="Profile Photo" class="profile-img">
+        <input type="file" id="profile-image" accept="image/*" style="display: none;" onchange="previewProfileImage(event)">
+    </label>
+	<script>
+	function previewProfileImage(event) {
+    var profileImg = document.getElementById('profile-img');
+    var file = event.target.files[0];
+    var reader = new FileReader();
+
+    reader.onload = function(e) {
+        profileImg.src = e.target.result;
+    };
+
+    reader.readAsDataURL(file);
+}
+	</script>
+<!-- Edit Button -->
+<button class="edit-button" onclick="editProfile()">Edit</button>
+
+     <!-- Buttons for Student and Business -->
+     <div class="editor">
+     <div class="options">
+        <input type="radio" id="student" name="category" value="student">
+        <label for="student">Student</label>
+        <input type="radio" id="business" name="category" value="business" checked>
+        <label for="business">Business</label>
+      </div>
+       <!-- Buttons for Student and Business -->
+      <script>
+        document.querySelectorAll('input[name="category"]').forEach((elem) => {
+            elem.addEventListener("change", function(event) {
+                var value = event.target.value;
+                if (value === "student") {
+                    window.location.href = "student_profile.html"; // Replace with actual URL
+                } else if (value === "business") {
+                    window.location.href = "business_profile.html"; // Replace with actual URL
+                }
+            });
+        });
+    </script>
+
+      <!-- Replace Button with Profile Image Upload -->
+      <form class="replace-button-container" id="imageUploadForm" enctype="multipart/form-data">
+        <input type="file" id="profileImage" name="profileImage" style="display: none;" onchange="uploadImage()">
+        <button type="button" class="replace-button" onclick="document.getElementById('profileImage').click()">
+            <img src="assets/images/arrow.png" alt="replace" class="replace">Replace
+        </button>
+     </form>
+      </div>
+
+        <script>
+         function replaceImage() {
+          // Function to replace the image
+         alert("Replace image functionality not implemented.");
+}
+
+    function uploadImage() {
+    var form = document.getElementById('imageUploadForm');
+    var formData = new FormData(form);
+    var xhr = new XMLHttpRequest();
+
+    xhr.open('POST', '/upload', true);
+    xhr.onload = function () {
+        if (xhr.status === 200) {
+            alert('Image uploaded successfully');
+        } else {
+            alert('Image upload failed');
+        }
+    };
+    xhr.send(formData);
+  }
+  </script>
+        </div>
+		
+	
+<!---------container1-Company Information----------------->
+	  <form action="save_company_info.php" method="POST">
+	 <div class="container1">
+	 <section-1>
+	<h2>Company Information</h2><br>
+        <label for="company_name"><h4>Company Name</h4></label>
+        <input type="text" id="company_name" name="company_name" placeholder="Enter Your Company Name"><br><br>
+        
+        <label for="location"><h4>Location</h4></label>
+        <input type="text" id="location" name="location" placeholder="Tag Your Location"><br><br>
+         
+		 <label for="zip_code"><h4>Zip Code</h4></label>
+        <input type="text" id="zip_code1" name="zip_code1" placeholder="Enter Your Zip Code">
+        <input type="text" id="zip_code2" name="zip_code2" placeholder="Zip Code (Optianal)"><br><br><br>
+		</section-1>
+		 
+		 <section-2>
+        <label for="about"><h4>About</h4></label>
+        <textarea id="about" name="about" rows="4" cols="50"></textarea><br>
+        <input type="submit" value="Save">
+		</section-2>
+		
+    </form>
+	</div>
+	
+<!---------container-Post a Job----------------->
+        <form action="save_job_post.php" method="POST" enctype="multipart/form-data">
+         <div class="container2">
+		 <section-1>
+       <h2>Post a Job</h2><br>
+        <label for="job_title"><h4>Post title</h4></label>
+        <input type="text" id="job_title" name="job_title" placeholder="Enter Your Job Title Here"><br><br>
+        
+        <label for="job_description"><h4>Job Description</h4></label>
+        <textarea id="job_description" name="job_description" rows="4" cols="50" placeholder="Tell Us Something About Your Job"></textarea><br><br>
+		</section-1><br>
+        
+	<section-2>
+        <div class="dropdown-container">
+            <div class="dropdown">
+                <label for="job-type">Job type</label>
+                <select id="job-type">
+                    <option value="" disabled selected>Select job type</option>
+                    <option value="part-time">Part-time</option>
+                    <option value="internship">Internship</option>
+                </select>
+            </div>
+            <div class="vl"></div>
+            <div class="dropdown">
+                <label for="industry">Industry</label>
+                <select id="industry">
+                    <option value="" disabled selected>Select Industry</option>
+                    <option value="tech">Tech</option>
+                    <option value="finance">Finance</option>
+                    <option value="healthcare">Healthcare</option>
+                    <option value="education">Education</option>
+                </select>
+            </div>
+            <div class="vl"></div>
+            <div class="dropdown">
+                <label for="position">Position</label>
+                <select id="position">
+                    <option value="" disabled selected>Select Position</option>
+                </select>
+            </div>
+        </div>
+    </section-2>
+
+    <script>
+        const industryToPositions = {
+            tech: ["Developer", "Designer", "Product Manager", "System Analyst"],
+            finance: ["Financial Analyst", "Accountant", "Investment Banker", "Auditor"],
+            healthcare: ["Nurse", "Doctor", "Pharmacist", "Medical Technician"],
+            education: ["Teacher", "Professor", "Administrator", "Counselor"]
+        };
+
+        document.getElementById('industry').addEventListener('change', function() {
+            const industry = this.value;
+            const positionSelect = document.getElementById('position');
+
+            // Clear previous options
+            positionSelect.innerHTML = '<option value="" disabled selected>Select Position</option>';
+
+            // Populate new options
+            if (industryToPositions[industry]) {
+                industryToPositions[industry].forEach(position => {
+                    const option = document.createElement('option');
+                    option.value = position.toLowerCase().replace(/ /g, '-');
+                    option.textContent = position;
+                    positionSelect.appendChild(option);
+                });
+            }
+        });
+    </script>
+        
+		      <section-3>
+    <form action="upload_image.php" method="POST" enctype="multipart/form-data">
+        <label for="resume"><h4>Upload image</h4></label><br>
+        <div class="file-input-container">
+            <input type="file" id="resume" name="resume" accept="image/*">
+            <img id="preview" src="assets/images/upload1.jpg" alt="Uploaded Image" style="width: 235px; height: 235px; border: 1px solid #D9D9D9;"><br>
+            <img src="assets/images/upload.jpg" alt="upload" width="32" height="21.5">
+            <h4>Upload image</h4>
+        </div>
+        <br><br>
+        <input type="submit" value="Post">
+    </form>
+</section-3>
+<script>
+    document.getElementById('resume').addEventListener('change', function(event) {
+        var file = event.target.files[0];
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            var img = document.getElementById('preview');
+            img.src = e.target.result;
+            img.style.display = 'block'; // Show the image
+        };
+
+        reader.readAsDataURL(file);
+    });
+</script>
+
+	  </div>
+	  </form>
+	  
+	  <!-- Chatbot Icon -->
+	<div class="chatbot-icon" onclick="openChatbot()">
+        <i class="fa fa-comments"></i>
+    </div>
+
+    <div class="chatbot-modal" id="chatbotModal">
+        <div class="chatbot-header">
+            Hi Wellcome plase tell me your problem
+            <span class="chatbot-close" onclick="closeChatbot()">&times;</span>
+        </div>
+        <div class="chatbot-body">
+            <!-- Chatbot content goes here -->
+            <iframe src="chatbot/chatbot.html" width="100%" height="100%" style="border: none;"></iframe>
+        </div>
+    </div>
+
+    <script>
+        function openChatbot() {
+            document.getElementById('chatbotModal').style.display = 'block';
+        }
+
+        function closeChatbot() {
+            document.getElementById('chatbotModal').style.display = 'none';
+        }
+    </script>
+    
+
+  <!-- footer -->
+  <footer>
+    <div class="footer-container">
+      <section class="footer-section-1">
+        <img src="assets/images/logo.png" alt="CareerCrafter Logo">
+        <p>Our vision is to provide convenience and<br> to help increase your sales business</p>
+        <div class="contact-info">
+          <h3>Contact Us</h3>
+          <p><i class="fa fa-phone"></i><b> +94 11 123 4567</b></p>
+          <p><i class="fa fa-envelope"></i>
+            <a href="mailto:hello@careercrafter.com">hello@careercrafter.com</a>
+          </p>
+          <div class="social-media">
+            <a href="https://www.facebook.com/CareerCrafter/"><i class="fa fa-facebook-f"
+                style="color:black;width: 35px;"></i></a>
+            <a href="https://www.twitter.com/CareerCrafter/"><i class="fa fa-twitter" style="color:black;"></i></a>
+            <a href="https://www.instagram.com/CareerCrafter/"><i class="fa fa-instagram" style="color:black;"></i></a>
+          </div>
+        </div>
+      </section>
+      <section class="footer-section-2">
+        <div class="footer-links">
+          <h3>Our Pages</h3>
+          <ul>
+            <li><a href="Trainings.html">Trainings</a></li>
+            <li><a href="Jobs.html">Jobs</a></li>
+            <li><a href="Profile.html">Profile</a></li>
+            <li><a href="About Us.html">About Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h3>Features</h3>
+          <ul>
+            <li><a href="#">Create CV Quickly</a></li>
+            <li><a href="Trainings.html">Training Sessions</a></li>
+            <li><a href="Trainings.html">Online IQ Test</a></li>
+            <li><a href="#">FAQ/Chatbot</a></li>
+          </ul>
+        </div>
+      </section>
+      <section class="footer-section-3">
+        <h3>Write a Comment</h3>
+        <form action="#" id="comment-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name">
+          </div>
+          <div class="form-group">
+            <label for="comment">Comment and Rating</label>
+            <textarea id="comment" name="comment" placeholder="Write your comment"></textarea>
+            <div class="rating-and-send">
+              <i class="fa fa-star star-1"></i>
+              <i class="fa fa-star star-2"></i>
+              <i class="fa fa-star star-3"></i>
+              <i class="fa fa-star star-4"></i>
+              <i class="fa fa-star star-5"></i>
+              <button type="submit" class="send-button">
+                <i class="fa fa-paper-plane"></i> </button>
+            </div>
+            <script>
+              const stars = document.querySelectorAll('.fa-star');
+  
+              stars.forEach((star, index) => {
+                star.addEventListener('mouseover', () => {
+                  highlightStars(index);
+                });
+  
+                star.addEventListener('click', () => {
+                  highlightStars(index);
+                });
+              });
+  
+              function highlightStars(index) {
+                stars.forEach((star, i) => {
+                  if (i <= index) {
+                    star.classList.add('active');
+                  } else {
+                    star.classList.remove('active');
+                  }
+                });
+              }
+            </script>
+  
+          </div>
+        </form>
+      </section>
+    </div>
+    <hr style="border-color: #13213C;
+    box-shadow: 1px 1px #13213C;">
+    <div class="footer-bottom">
+      <p>&copy; 2024 CareerCrafter. All rights reserved.</p>
+      <ul type=none>
+        <li><a class="footer_a"
+            href="https://www.freeprivacypolicy.com/live/44c1a963-7b2d-4486-b56d-184635144c9a">Privacy Policy</a></li>
+        <li><a class="footer_a" href="https://www.freeprivacypolicy.com/live/2a935df5-f30c-4267-acd3-4e2fbbae4516">Terms
+            & Conditions</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

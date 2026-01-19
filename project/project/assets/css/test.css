@@ -1,0 +1,26 @@
+
+.editor {
+    width: 360px;
+    margin: 10px auto;
+    padding: 20px;
+}
+
+.editable-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.options {
+    margin-bottom: 90px;
+	margin-left:70px;
+}
+
+.options input[type="radio"] {
+    margin-right: 5px;
+}
+
+.size-controls input {
+    width: 60px;
+    margin-right: 30px;
+}

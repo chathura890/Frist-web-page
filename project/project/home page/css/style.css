@@ -1,0 +1,295 @@
+/*Primary colours
+yellow-#F8AC01
+dark blue-#13213C
+
+Secondary Colors
+
+light blue-#205AB1
+black-#181818
+white-#EDEDED
+*/
+/*roboto font*/
+@import url('https://fonts.googleapis.com/css2?family=Gabarito&family=Nosifer&family=Oswald&family=Roboto+Slab:wght@600&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-light {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-medium {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.roboto-black {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.roboto-thin-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.roboto-light-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.roboto-regular-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.roboto-medium-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.roboto-bold-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.roboto-black-italic {
+  font-family: "Roboto", sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+/*carousel*/
+  #carouselExampleIndicators{
+    margin: 70px;
+  }
+  /*button id*/
+  #roboto-bold {
+    font-family: "Roboto", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+.bannerall{
+  top: 37%;
+  left: 17%;
+  position: relative;
+  width: fit-content;
+}
+.box1{
+  width: auto;
+  height: 230px;
+  background-color: #13213C;
+}
+.box{
+  width:auto; 
+  height:132px; 
+  background-color: #F8AC01;
+  position: relative;
+  margin: 20px;
+  top: 21%;
+}
+.container{
+ 
+}
+.title{
+  width: fit-content;
+  height: fit-content;
+  font-size: 16px; 
+  color: #181818; 
+  position: relative;
+  left: 2%;
+  top: 3%;
+}
+.vl {
+  border-left: 3px solid #181818;
+  height: 50px;
+}
+.searchbox{
+  width: 310px;
+  height: 37px;
+  background-color: #EDEDED;
+  border-radius: 12px;
+  border: none;
+  position: relative;
+  left: 70%;
+  bottom: 33%;
+}
+.items{
+  width: 350px;
+  height: 252px;
+  margin: 5px;
+  justify-content: center;
+  padding: 35px;
+  cursor: pointer;
+}
+.Sicon{
+  width:106px;
+  height: 106.89px;
+  border-radius: 30px;
+  position: relative;
+  bottom: 30px;
+  left: 20px;
+  background-color: #F8AC01;
+  justify-content: center;
+
+}
+.two, .four{
+  align-self: center;
+}
+.services{
+  text-align: center;
+}
+.para{
+  top: 25%;
+  left: 3%;
+  position: relative;
+  width: 529px;
+  height: auto;
+  text-align: center;
+}
+
+
+/*happy customer section*/
+.feedback-body{
+  height: 670px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  background-color: rgba(19, 33, 60, 1);
+}
+/*section-header*/
+.section-header{
+  text-align: center;
+  margin-bottom: 40px;
+  color: #F8AC01;
+}
+
+/*testimonials*/
+.testimonials{
+  padding: 100px 0;
+}
+.testimonials-item{
+  background-color: rgba(211, 220, 231, 1);
+  padding: 30px;
+  border-radius: 10px;
+  height: 230px;
+}
+.testimonials-item img{
+  max-width: 60px;
+  border-radius: 50%;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+.testimonials-item .name{
+  font-size: 24px;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color:rgba(72, 98, 132, 1);
+  line-height: 1.2;
+}
+.testimonials-item .job{
+  text-transform: capitalize;
+  color:rgba(72, 98, 132, 1);
+}
+.testimonials-item p{
+  margin-top: 20px;
+  color: rgba(72, 98, 132, 1);
+}
+.testimonials-item .rating{
+  margin-top: 15px;
+  font-size: 14px;
+  color: black;
+}
+.testimonials .swiper-pagination{
+  position: relative;
+  margin-top: 40px;
+  bottom: auto;
+}
+.testimonials .swiper-pagination-bullet{
+  height: 12px;
+  width: 12px;
+  background-color: rgba(32, 90, 177, 1);
+}
+
+.contactus{
+  height: 610px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*chatbot icon*/
+    
+.chatbot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 1px 2px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.chatbot-body {
+  padding: 10px;
+  height: calc(100% - 40px);
+  overflow-y: auto;
+}
+
+.chatbot-icon i {
+font-size:28px;
+}
+.chatbot-modal {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 500px;
+  height: 540px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.chatbot-header {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.chatbot-close {
+  float: right;
+  cursor: pointer;
+}		 

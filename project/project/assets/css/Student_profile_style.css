@@ -1,0 +1,973 @@
+/* .container div{
+  margin-top: 50px ;
+  
+} */
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+ }
+ /*header css*/
+ nav {
+  background-color: #13213C;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.logo {
+  flex-grow: 0;
+}
+
+.logo img {
+  height: 50px;
+  padding-left: 25px;
+}
+
+.nav-links {
+display: flex;
+list-style: none;
+margin: 0px;
+padding-right: 0px;
+padding-left: 35px;
+flex-direction: row;
+text-align: center;
+margin-left: 3%;
+margin-right: 0%;
+}
+
+.nav-links li {
+  margin-right: 20px;
+}
+
+.nav-links a {
+  color: inherit;
+  text-decoration: none;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  background-color: #205AB1;
+  color: #fff;
+}
+
+.search-bar {
+  position: relative;
+  padding: 0px 0px; /* Maintain existing padding */
+}
+
+.search-bar button {
+  position: absolute;
+  right: 5px; /* Position button on the right side */
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background-color: #205AB1; /* Maintain button color */
+  color: #fff; /* Maintain button text color */
+  padding: 5px; /* Maintain button padding */
+  border-radius: 5px; /* Maintain button border radius */
+  cursor: pointer; /* Maintain button cursor style */
+}
+
+.search-bar input[type="text"] {
+  width: 240px; /* Maintain input width */
+  padding: 10px 15px; /* Maintain input padding */
+  margin-left: 30px;
+  border: none; /* Maintain no border */
+  border-radius: 10px; /* Maintain input border radius */
+  background-color: #f2f2f2; /* Maintain input background color */
+  outline: none; /* Remove default outline on focus */
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2), /* Inner shadow for depth */
+             inset -1px -1px 2px rgba(255, 255, 255, 0.7); /* Inner highlight for embossing */
+}
+
+.search-bar input[type="text"]:focus {
+  /* Optional: Add a subtle border on focus */
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.auth-container {
+display: flex;
+padding: 0px 15px 0px 15px;
+}
+
+.auth-container {
+display: flex;
+padding: 0px 15px 0px 15px;
+}
+
+.auth-container button {
+padding: 10px 15px;
+border-radius: 5px;
+color: #ffffff; /* Apply the desired color initially */
+text-decoration: none;
+background-color: transparent; /* Remove button background */
+border: none; /* Remove default button border */
+cursor: pointer; /* Set cursor to pointer on hover */
+}
+
+.auth-container button:hover {
+/* Apply hover effect to both buttons */
+background-color: #205AB1; /* Darken the blue on hover */
+}
+
+.register {
+margin-right: 5px;
+}
+
+.loginn {
+margin-right: 5px;
+}
+@media only screen and (max-width: 768px) {
+.nav-container {
+  padding: 10px; /* Reduce padding for smaller screens */
+}
+
+.logo img {
+  height: 40px; /* Decrease logo size for smaller screens */
+}
+
+.nav-links {
+  display: none; /* Hide nav links on smaller screens */
+}
+
+.search-bar {
+  display: none; /* Hide search bar on smaller screens */
+}
+
+.auth-container {
+  padding: 0px 20px; /* Adjust padding for smaller screens */
+}
+
+.auth-container button {
+  padding: 8px 12px; /* Adjust button padding for smaller screens */
+}
+}
+
+/* Media queries for even smaller screens */
+@media only screen and (max-width: 480px) {
+.logo img {
+  height: 30px; /* Further decrease logo size for even smaller screens */
+}
+
+.auth-container {
+  padding: 0px 10px; /* Further adjust padding for even smaller screens */
+}
+
+.auth-container button {
+  padding: 6px 10px; /* Further adjust button padding for even smaller screens */
+}
+}
+
+/* ------cover photo-------- */
+#cover-upload {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+.cover-img-div{
+  height: 350px;
+  object-fit: cover;
+  margin-top: 100px;
+
+}
+
+#cover-img {
+  width: 100%;
+  height: 100%;
+}
+
+#Edit-btn {
+  
+  background-color: #13213C;
+  width: 110px;
+  margin-left: 1185px;
+}
+
+
+/* check boxes    */
+
+
+
+/* ------profile photo-------- */
+
+.profile-img-div {
+  position: absolute;
+  bottom: 195px;
+  left: 200px;
+}
+
+.profile-img-change-div {
+  width: 250px; /* Adjust as needed */
+  height: 250px; /* Adjust as needed */
+  border-radius: 50%; /* Makes it round */
+  overflow: hidden; /* Ensures the content inside doesn't overflow */
+  border: 2px solid #fff; /* Border around the circle */
+}
+
+.profile-change {
+  width: 250px;
+  height: 250px;
+  background-color: rgb(202, 212, 227);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.profile-photo-upload {
+  color: #fbf7f7;
+  /* Adjust size and position of the icon */
+  width: 100%; /* Adjust as needed */
+  height: 100%; /* Adjust as needed */
+  margin-top: 2px; /* Adjust as needed */
+}
+#profile-change-btn {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #13213C;
+  width: 120px;
+  margin-top: 10px;
+}
+
+/*-------left grid----------*/
+.check-box{
+  display: inline-block;
+  margin: 540px; /* Centers the checkboxes */
+  margin-top: 5px;
+  margin-bottom: 20px;
+  max-width: 100%;
+}
+
+
+
+/*-------left grid----------*/
+
+
+/*-------bio----------*/
+.bio{
+  margin-right: 55px;
+  margin-top: 170px;
+}
+
+.bio-title {
+  cursor: pointer; /* Add pointer cursor for clickable effect */
+  margin-top: 100px;
+}
+
+.bio-text {
+  width: 85% ; /* Adjust width to leave space for button */
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 200px; /* Set a minimum height */
+  margin-top: 10px; /* Add space below the title */
+  background-color: #EDEDED;
+    
+}
+
+
+#bio-Edit-btn {
+  background-color: #13213C;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 280px;
+  margin-top: 10px;
+}
+#bio-Edit-btn:hover {
+  background-color: #5192d6; /* Darker blue */
+}
+
+/*----portfolio----*/
+
+.photo-upload {
+  width: 70%;
+  height: 120px;
+  background-color: rgb(202, 212, 227);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.photo-upload i {
+  color: #fbf7f7;
+}
+.fa-cloud-arrow-up {
+  margin-top: 15px;
+}
+
+.portfolio-Edit-btn-div {
+  margin-top: 10px;
+}
+
+#portfolio-Edit-btn {
+  background-color: #13213C;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 65px;
+  margin-top: 15px;
+}
+#portfolio-Edit-btn:hover {
+  background-color: #5192d6; /* Darker blue */
+}
+
+/*  contact detales  */
+.Contact-Details{
+  margin-right: 60px;
+}
+.personal-info{
+  margin-top: 45px;
+}
+#contact-info{
+  margin-bottom: 30px;
+}
+.telephone-input {
+  width: 50%; /* Adjust the width as needed */
+}
+#contact-Edit-btn {
+  background-color: #13213C;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 12px;
+  margin-top: 25px;
+  max-width: 80px;
+}
+#contact-Edit-btn:hover {
+  background-color: #5192d6; /* Darker blue */
+}
+#contact-save-btn {
+  position:absolute;
+  background-color: #13213C;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 285px;
+  margin-top: 110px;
+  max-width: 80px;
+}
+#contact-save-btn:hover {
+  background-color: #5192d6; /* Darker blue */
+}
+
+.options{
+    width: 20%;
+    margin-left: 48%;
+    margin-top: 47px;
+}
+
+.options input[type="radio"] {
+  margin-left: 12px;
+  width: 20px; 
+  height: 20px; 
+  transform: scale(1.5); 
+  margin-right: 10px; 
+}
+.options label {
+  font-size: 1.1em; 
+  margin-left: 1px;
+  font-weight: 600; 
+}
+
+
+
+/*  right side grid */
+.right-div1{
+  margin-left: 45px;
+  margin-top: 71px;
+}
+
+/*  adress and zip code grid */
+.address {
+  margin-bottom: 50px; /* Adjust the margin-bottom to reduce the gap */
+}
+
+.personal-info-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+}
+
+#date-save-btn {
+  background-color: #13213C;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 460px;
+  margin-top: 50px;  
+  
+}
+#date-save-btn:hover {
+  background-color: #180594; /* Darker blue */
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  width: 90%;
+  max-height: 40px;
+  margin-right: 10px;
+}
+
+.input-group-append {
+  flex: 0 0 auto;
+}
+
+.input-group-text {
+  display: flex;
+  align-items: center;
+  padding: 0.375rem 0.75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+#birthday{
+  margin-right: 10px;
+}
+
+
+
+/*  (education div) */
+.right-div2{
+  margin-left: 45px;
+}
+#firstday{
+  margin-left: 5px;
+}
+.about-text {
+  width: 100% ; /* Adjust width to leave space for button */
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 160px; /* Set a minimum height */
+  margin-top: 10px; /* Add space below the title */  
+}
+#edu-add-btn{
+  position: absolute;
+  background-color: #13213C;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px; 
+  max-width: 90px;
+  margin-top: 10px; 
+  
+}
+.about-text{
+  margin-bottom: 10px;
+}
+#edu-add-btn:hover {
+  background-color: #180594; /* Darker blue */ 
+}
+#about-Edit-btn{
+  background-color: #13213C;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 737px;
+  margin-top: 10px; 
+  max-width: 90px;   
+}
+#about-Edit-btn:hover {
+  background-color: #180594; /* Darker blue */
+}
+#about-save-btn{
+  background-color: #13213C;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 737px;
+  margin-top: 10px; 
+  max-width: 90px;   
+}
+#about-save-btn:hover{
+  background-color: #180594; /* Darker blue */
+}
+
+
+/*  experience section */
+.right-div3{
+  margin-left: 45px;
+}
+#about-edit-btn{
+  position: absolute;
+  background-color: #13213C;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px; 
+  max-width: 90px;
+  margin-top: 10px; 
+}
+#about-edit-btn:hover {
+  background-color: #180594; /* Darker blue */
+}
+#startday{
+  max-width: 75%;
+  margin-left: 15px;
+}
+
+/*  skill section*/
+.right-div4{
+  margin-left: 45px;
+}
+
+/*  skill section*/
+.right-div5{
+  margin-left: 45px;
+}
+.skill-bar-container {
+  width: 100%;
+  background-color: #ddd;
+  height: 20px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.skill-bar {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+}
+#skill-edit-btn{
+  position: absolute;
+  background-color: #13213C;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 13px; 
+  max-width: 90px;
+  margin-top: 20px; 
+}
+#skill-edit-btn:hover {
+  background-color: #ee3c06; /* Darker blue */
+}
+#skill-save-btn{
+  background-color: #13213C;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 733px; 
+  max-width: 90px;
+  margin-top: 20px; 
+}
+#skill-save-btn:hover{
+  background-color: #0be20b; /* Darker blue */
+}
+
+
+
+
+/* language dection*/
+.right-div6{
+  margin-left: 45px;
+  margin-bottom: 30px;
+}
+#language-save-btn{
+  background-color: #13213C;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 732px; 
+  margin-top: 20px;
+  max-width: 90px;   
+}
+#language-save-btn:hover {
+  background-color: #180594; /* Darker blue */
+}
+#language-add-btn{
+  position: absolute;
+  background-color: #13213C;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 13px; 
+  margin-top: 20px; 
+  max-width:90px;  
+}
+#language-add-btn:hover {
+  background-color: #180594; /* Darker blue */
+}
+.progress{
+  margin-top: 75px;
+}
+
+/* Newly Added CSS */
+.profile-image-add-div{
+  position: absolute !important; 
+  top: 400px !important;
+  margin-left: 100px;
+  width: fit-content;
+}
+/*footer*/
+footer {
+  background-color: #205AB1;
+  color: #fff;
+  padding: 20px 0px;
+  font-family: 'Roboto', sans-serif; /* Specify Roboto as the primary font */
+}
+
+footer {
+  background-color: #13213C;
+  color: #fff;
+  padding: 20px 0px;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 95%;
+  margin: 0px auto;
+  justify-content: flex-end;
+}
+
+.footer-section-1, .footer-section-2, .footer-section-3 {
+margin-left: 70px;
+margin-right: 30px;
+flex: 0 0 auto;
+width: 28%;
+padding: 15px 12px 15px 12px;
+font-family: 'Roboto', sans-serif;
+}
+
+.footer-section-1 img {
+  height: 50px; /* Adjust logo height if needed */
+}
+
+.footer-section-1 p {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px; /* Add margin for spacing */
+}
+
+.contact-info h3 {
+  margin-bottom: 5px;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 20px;
+}
+
+.contact-info p {
+font-size: 18px;
+line-height: 0;
+font-family: 'Roboto', sans-serif;
+display: flex;
+align-items: center;
+}
+
+.contact-info p i {
+  margin-right: 5px; /* Add space between icon and text */
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.contact-info a {
+  color: #fff; /* Set text color to white */
+  text-decoration: none; /* Remove underline */
+}
+
+.social-media {
+  display: flex;
+  margin-top: 10px; /* Add margin for spacing */
+}
+
+.social-media a {
+  margin-right: 10px; /* Existing style for spacing */
+  color: inherit; /* Inherit footer text color */
+}  
+
+.social-media a i {
+  font-size: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 7px 9px 7px 9px;
+}
+
+.fa-facebook-f:before {
+  content: "\f39e";
+  size: 10px;
+}
+
+.social-media a:first-child i { /* Facebook icon */
+  color: #3b5998; /* Facebook blue color */
+}
+
+.social-media a:nth-child(2) i { /* Twitter icon */
+  color: #00aced; /* Twitter blue color */
+}
+
+.social-media a:last-child i { /* Instagram icon */
+  color: #e1306c; /* Instagram red-orange color */
+}
+
+.footer-section-2 {
+  display: flex; /* Allow columns to display side-by-side */
+}
+
+.footer-links {
+  flex: 1;
+  margin-right: 20px;
+  line-height: 3.5;
+}
+
+.footer-links:last-child {
+  margin-right: 0; /* Remove margin from last column */
+}
+
+.footer-links h4 {
+  margin-bottom: 10px; /* Add margin for spacing */
+}
+
+.footer-links ul {
+  list-style: none; /* Remove default bullet points */
+  padding: 0; /* Remove default padding */
+  font-family: 'Roboto', sans-serif
+}
+
+.footer-links li {
+  margin-bottom: 5px; /* Add space between links */
+  font-family: 'Roboto', sans-serif
+}
+
+.footer-links ul li a { /* Target links within footer-links list */
+  color: #fff; /* Set text color to white */
+  text-decoration: none; /* Remove underlines */
+}
+
+.footer-section-3 {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-section-3 h3 {
+  margin-bottom: 42px;
+  font-family: 'Roboto', sans-serif;
+  margin-top: 22px;
+}
+
+.form-group {
+  margin-bottom: 10px; /* Add space between form elements */
+}
+
+.form-group label {
+  display: block; /* Display labels on separate lines */
+  margin-bottom: 5px; /* Add space between label and input */
+  font-family: 'Roboto', sans-serif;
+}
+
+.form-group input {
+  width: 100%; /* Make input elements full width */
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  font-family: 'Roboto', sans-serif;
+}
+
+.form-group textarea {
+  width: 100%; /* Make textarea full width */
+  height: 100px; /* Adjust the height as needed */
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  font-family: 'Roboto', sans-serif;
+}
+
+.rating-and-send {
+  display: flex; /* Arrange stars and button horizontally */
+  align-items: center; /* Vertically align stars and button */
+}
+
+.rating-and-send .star-1,
+.rating-and-send .star-2,
+.rating-and-send .star-3,
+.rating-and-send .star-4,
+.rating-and-send .star-5 {
+  margin-right: 5px; /* Add spacing between stars */
+  font-size: 20px;
+  cursor: pointer;
+  color: #ffffff; /* Light gray for unselected stars */
+}
+
+.rating-and-send .star-1:hover,
+.rating-and-send .star-2:hover,
+.rating-and-send .star-3:hover,
+.rating-and-send .star-4:hover,
+.rating-and-send .star-5:hover,
+.rating-and-send .star-1.selected,
+.rating-and-send .star-2.selected,
+.rating-and-send .star-3.selected,
+.rating-and-send .star-4.selected,
+.rating-and-send .star-5.selected {
+  color: #ffd700; /* Yellow for hover and selected stars */
+}
+.fa-star.active,
+  .fa-star:hover {
+    color: gold;
+  }
+
+.send-button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+  margin-left: 225px;
+}
+
+.send-button i {
+color: white;
+font-size: 18px;
+margin-left: -30px;
+margin-top: 5px;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 10px;
+}
+
+.footer-bottom p {
+  flex: 1;
+  margin: 10px 20px 10px 20px;
+}
+
+.footer-bottom {
+  display: flex; /* Enable flexbox layout */
+  padding: 10px 0px; /* Maintain existing padding */
+}
+
+.footer-bottom ul {
+  display: flex; /* Enable flexbox layout for links */
+  list-style: none; /* Remove default bullet points */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+ 
+.footer-bottom li:first-child { /* Style the first link (Privacy Policy) */
+  margin-left: 0; /* Remove left margin for left positioning */
+}
+
+.footer-bottom li:last-child {
+  margin-right: 35px;
+}
+
+.footer-bottom a {
+  color: inherit;
+  text-decoration: underline;
+  padding: 0px;
+  margin: 5px 20px 5px 20px;
+  align-items: stretch;
+  align-content: flex-end;
+  text-decoration: none;
+}
+
+/*chatbot icon*/
+    
+.chatbot-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  padding: 15px;
+  box-shadow: 1px 2px 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+.chatbot-body {
+  padding: 10px;
+  height: calc(100% - 40px);
+  overflow-y: auto;
+}
+
+.chatbot-icon i {
+font-size:28px;
+}
+.chatbot-modal {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  width: 500px;
+  height: 540px;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.chatbot-header {
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.chatbot-close {
+  float: right;
+  cursor: pointer;
+}		 
+

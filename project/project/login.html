@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>log in</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/login_and_signup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+ 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+</head>
+<body class="login_body">
+  <header>
+    <nav>
+    <div class="nav-container">
+      <a class="logo" href="#">
+        <img src="assets/images/logo.png" alt="CareerCrafter logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="home page/index.html">Home</a></li>
+        <li><a href="JobDetails.html">Jobs</a></li>
+        <li><a href="#">Training</a></li>
+        <li><a href="business_profile.html">Profile</a></li>
+        <li><a href="About.html">About Us</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <div class="search-bar">
+        <form action="/search" method="post">  
+          <button type="submit">  
+            <i class="fa fa-search" style="color: black;font-weight: 800;"></i>
+          </button>
+          <input type="text" name="query">  
+        </form>
+      </div>
+      <div class="auth-container">
+        <button class="register" onclick="window.location.href='Signup.html'">Register</button>
+        <button class="loginn" onclick="window.location.href='Login.html'">Login</button>
+      </div>
+    </div>
+  </nav>
+</header>
+    <section class="login">
+        <div class="login-container">
+            <img class="login_logo" src="assets/images/logo.png">
+            <h2 class="login_title">Login</h2>
+            <!--<?php
+            include("Main_PHP/connection.php");
+            if (isset($_POST["login"])) {
+                $U_Name = $_POST["U_Name"];
+                $passwrd = $_POST["Pass"];
+                $sql = "SELECT * FROM customer WHERE First_name = '$U_Name'";
+                $result = mysqli_query($conn, $sql);
+                $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                if ($user) {
+             if ($passwrd == $user["passw"]) {
+                 session_start();
+                 $_SESSION["user"] = "yes";
+                 header("Location: Home.php");
+                 die();
+             }else{
+                 echo "<div class='alert alert-danger'>Password does not match</div>";
+             }
+         }else{
+             echo "<div class='alert alert-danger'>Email does not match</div>";
+         }
+     }
+    ?>-->
+            <div class="form">
+            <form action="login.php" method="post">
+                <label>Email</label><br>
+                <input type="text" class="logiin_inputs" name="Email" placeholder="Username@gmail.com"><br>
+                <br>
+                <label>Password</label><br>
+                <input type="password" class="logiin_inputs" name="Password" placeholder="Password"><br>
+                <a class="forgot_pass" href="forgot_password.html">Forgot Password?</a><br>
+                <button type="submit" name="login" class="log_btn">Sign in</button>
+            </form>
+            </div>
+            <div class="others">
+                <br>
+            <p class="login_p">or contact with</p>
+            <div class="social_btn">
+                <div class="social_icons">
+                    <a href="#" class="fa fa-google" style="font-size:28px"></a>
+                </div>
+                <div class="social_icons">
+                    <a href="#" class="fa fa-github" style="font-size:28px"></a>
+                </div>
+                <div class="social_icons">
+                <a href="#" class="fa fa-facebook" style="font-size:28px"></a>
+                </div>
+            </div>
+            <div class="way_to_sign">
+            <p class="dont_have">Dont have account yet?</p>
+            <a class="register_a" href="signup.html">Register For Free</a>
+            </div>
+        </div>
+        </div>
+    </section>
+    <div class="login_text_container">
+        <h1><span>WELCOME</span> TO</h1>
+        <h2>CAREER CRAFTER!</h2>
+    </div>
+
+     <!-- Chatbot Icon -->
+	<div class="chatbot-icon" onclick="openChatbot()">
+    <i class="fa fa-comments"></i>
+</div>
+
+<div class="chatbot-modal" id="chatbotModal">
+    <div class="chatbot-header">
+        Hi Wellcome plase tell me your problem
+        <span class="chatbot-close" onclick="closeChatbot()">&times;</span>
+    </div>
+    <div class="chatbot-body">
+        <!-- Chatbot content goes here -->
+        <iframe src="chatbot/chatbot.html" width="100%" height="100%" style="border: none;"></iframe>
+    </div>
+</div>
+
+<script>
+    function openChatbot() {
+        document.getElementById('chatbotModal').style.display = 'block';
+    }
+
+    function closeChatbot() {
+        document.getElementById('chatbotModal').style.display = 'none';
+    }
+</script>
+
+
+
+    <script>
+       // Function to auto-type placeholder text letter by letter
+  function typePlaceholderText(input) {
+    var placeholderText = input.getAttribute('placeholder');
+    var index = 0;
+    var intervalId = setInterval(function() {
+      input.value += placeholderText[index++];
+      if (index === placeholderText.length) {
+        clearInterval(intervalId);
+      }
+    }, 100);
+  }
+
+  // Select all input fields
+  var inputFields = document.querySelectorAll('input[type="text"],textarea');
+
+  // Loop through each input field
+  inputFields.forEach(function(input) {
+    // Call the function to type placeholder text for each input field
+    typePlaceholderText(input);
+
+    // Add event listener for when the input field is clicked
+    input.addEventListener('focus', function() {
+      // Clear the input field if its value is the same as the placeholder text
+      if (input.value === input.getAttribute('placeholder')) {
+        input.value = '';
+      }
+    });
+
+    // Add event listener for when the input field loses focus
+    input.addEventListener('blur', function() {
+      // Set the value back to the placeholder text if the input field is empty
+      if (input.value === '') {
+        typePlaceholderText(input);
+      }
+    });
+  });
+    </script>
+</body>
+</html>
