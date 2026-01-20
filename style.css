@@ -845,6 +845,65 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ============================================
+   Hobbies Section
+   ============================================ */
+.hobbies {
+    background: var(--bg-color);
+}
+
+.hobbies-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hobby-card {
+    background: var(--bg-light);
+    padding: 30px 20px;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.hobby-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary-color);
+}
+
+.hobby-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    background: var(--gradient-1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hobby-icon i {
+    font-size: 2.2rem;
+    color: white;
+}
+
+.hobby-card h3 {
+    color: var(--secondary-color);
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.hobby-card p {
+    color: var(--text-light);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* ============================================
    Contact Section
    ============================================ */
 .contact {
